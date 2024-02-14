@@ -9,7 +9,7 @@ const Products = () => {
           <Productcart  img="/Images/peproni.png" name="Havana Special" size="small" rupee="3$"/>
           <Productcart  img="/Images/peproni.png" name="Paneer Special" size="small" rupee="3$"/>
           <Productcart  img="/Images/peproni.png" name="Cheeken Special" size="small" rupee="3$"/>
-          <Productcart  img="/Images/peproni.png" name="Capsium Special" size="small" rupee="3$"/>
+          <Productcart  img="/Images/peproni.png" name="Capsicum Special" size="small" rupee="3$"/>
           <Productcart  img="/Images/peproni.png" name="Corn Special" size="small" rupee="3$"/>
           <Productcart  img="/Images/peproni.png" name="Chess Special" size="small" rupee="3$"/>
           <Productcart  img="/Images/peproni.png" name="Our Special" size="large" rupee="5$"/>
