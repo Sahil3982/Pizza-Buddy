@@ -1,23 +1,91 @@
-.navbar{
+/* Style for navbar */
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  padding: 12px;
+  margin: 10px;
 }
-.rightnav{
-  width: max-content;
+
+/* Style for right navigation */
+.rightnav {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 30px;
   padding-right: 10px;
 }
-.logo,.cart{
+
+/* Style for cart */
+.cart {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
-  background-color: rgb(228, 228, 100);
-  border-radius: 5px;
-  color: black;  
-  
+  padding: 6px 12px; /* Adjusted padding values */
+  background-color: rgb(238, 156, 14);
+  border-radius: 20px; /* Changed border-radius to 50% for a circular shape */
+  color: black;
 }
 
+/* Style for main home page content */
+.main-home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rem; /* Adjusted gap value */
+  padding: 2rem;
+}
+
+/* Style for order button */
+.order-btn {
+  padding: 10px 20px; /* Adjusted padding values */
+  background-color: rgb(214, 144, 23);
+  color: white;
+  border: none; /* Changed border-style to none */
+  border-radius: 15px;
+  cursor: pointer; /* Added cursor pointer for better UX */
+}
+
+/* Cart Design */
+/* Set width of product cart to fit its content */
+.product-cart {
+  width: fit-content;  
+}
+
+/* Style for image section */
+.img-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+/* Style for price and button section */
+.price-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10rem; /* Adjusted gap value */
+}
+
+/* Style for product list */
+.product-list {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap; /* Allow products to wrap to the next line */
+  padding: 20px; /* Adjusted padding value */
+}
+
+
+.pizza-buddy-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

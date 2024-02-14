@@ -6,8 +6,10 @@ const Mynavbar = () => {
   return (
     <div className='navbar'>
       <Link to="/" className='logo'>
-        <img src='/Images/pizza-buddy-logo.avif' style={{ width: 60 }} />
-        <h2>Pizza Buddy</h2>
+        <img src='/Images/logo.png' style={{ width: 60 }} />
+      </Link>
+      <Link to="/pizzabuddy">
+        Pizza-Buddy
       </Link>
 
 
@@ -15,7 +17,7 @@ const Mynavbar = () => {
 
         <Link to="/">Home</Link>
         <Link to="/products" > Products</Link>
-        <Link to="/cart" className='cart'>
+        <Link to="/cart" className='cart'>  
             <span>10</span>
             <img src='/Images/cart.png' className='cartimg' style={{ width: 20 }} />
         
