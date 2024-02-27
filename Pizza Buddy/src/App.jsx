@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Mynavbar from './Components/Header/Mynavbar'
 import Products from './Pages/Products'
 import './App.css';
+import Footer from './Components/Footer/Footer'
 function App() {
 
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/pizzabuddy' element={<Pizzabuddy />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   )
