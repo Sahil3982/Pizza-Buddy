@@ -1,5 +1,4 @@
 import React from 'react';
-import 'Footer.css'; // Import your CSS file for styling
 
 const Footer = () => {
   return (
@@ -9,7 +8,7 @@ const Footer = () => {
           <div className="col-md-6">
             <h4>Contact Us</h4>
             <p>123 Pizza Street, Pizza Town</p>
-            <p>Email: info@pizzawebsite.com</p>
+            <p>Email: info@pizz-buddy.com</p>
             <p>Phone: 123-456-7890</p>
           </div>
           <div className="col-md-6">
@@ -23,7 +22,7 @@ const Footer = () => {
         </div>
         <div className="row">
           <div className="col-md-12">
-            <p className="text-center">&copy; {new Date().getFullYear()} PizzaWebsite. All Rights Reserved.</p>
+            <p className="text-center">&copy; {new Date().getFullYear()} Pizza-Buddy. All Rights Reserved.</p>
           </div>
         </div>
       </div>
