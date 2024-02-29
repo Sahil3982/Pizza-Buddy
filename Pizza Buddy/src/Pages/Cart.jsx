@@ -2,7 +2,7 @@ import React from 'react'
 
 const Cart = () => {
   return (
-    <div> <img src='/Images/empty-cart.png' /></div>
+    <div > <img src='/Images/empty-cart.png'  /></div>
   )
 }
 

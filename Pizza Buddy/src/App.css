@@ -53,6 +53,7 @@
 /* Set width of product cart to fit its content */
 .product-cart {
   width: fit-content;  
+  
 }
 
 /* Style for image section */
@@ -91,6 +92,8 @@
 }
 
 
+
+
 /* Footer.css */
 
 
@@ -100,8 +103,7 @@
   margin: 30px;
 }
 
-.footer h4 {
-}
+
 
 .footer p {
   margin-bottom: 10px;
