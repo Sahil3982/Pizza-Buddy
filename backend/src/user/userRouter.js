@@ -1,7 +1,6 @@
 import express from "express"
 
 const userRouter = express.Router();
-console.log('ok');
 
 userRouter.post('/register', (req, res) => {
 
