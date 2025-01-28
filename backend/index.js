@@ -1,17 +1,24 @@
 import express from 'express';
-// import item from '../src/models/itemlist';
+// Import database connection and routers
 import db from './src/config/db.js';
 import userRouter from './src/user/userRouter.js';
+import recipelist from './src/user/recpielist.js';
 
-//Initialize express app
+// Initialize express app
 const app = express();
-app.use(express.json())
-db()
 
-app.use('/api/user',userRouter)
+// Middleware for JSON parsing
+app.use(express.json());
 
-//Initialize the sever
-app.listen(3000, () => {
-    console.log("get23");
-    console.log('sever listening on port:3000');
+// Connect to the database
+db();
+
+// Setup routes
+app.use('/api/user', userRouter);
+app.use('/api', recipelist);
+
+// Initialize the server
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running and listening on port: ${PORT}`);
 });
