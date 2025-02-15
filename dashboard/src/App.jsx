@@ -14,6 +14,7 @@ const Dashboard = () => {
   const fetchDishes = async () => {
     try {
       const response = await fetch("http://localhost:3000/api/dishes");
+      if (!response.ok) throw new Error("Failed to fetch dishes");
       const data = await response.json();
       setDishes(data);
     } catch (error) {
@@ -24,6 +25,7 @@ const Dashboard = () => {
   const fetchOrders = async () => {
     try {
       const response = await fetch("http://localhost:3000/api/orders");
+      if (!response.ok) throw new Error("Failed to fetch orders");
       const data = await response.json();
       setOrders(data);
     } catch (error) {
@@ -37,20 +39,22 @@ const Dashboard = () => {
     try {
       const response = await fetch("http://localhost:3000/api/addrecipe", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Cache-Control": "no-cache",
+          "Pragma": "no-cache",
+        },
+        cache: "no-store",
         body: JSON.stringify(newDish),
       });
-      if (response.ok) {
-        fetchDishes(); // Refresh dish list
-        setNewDish({ name: "", price: "", size: "", img: "" });
-      }
+      if (!response.ok) throw new Error("Failed to add dish");
+      fetchDishes(); // Refresh dish list
+      setNewDish({ name: "", price: "", size: "", img: "" });
     } catch (error) {
       console.error("Error adding dish:", error);
     }
   };
-  console.log("newDish",newDish);
   
-
   return (
     <div>
       <h1>Admin Dashboard</h1>
@@ -72,21 +76,29 @@ const Dashboard = () => {
       {/* Display Dishes */}
       <h2>Available Dishes</h2>
       <ul>
-        {dishes.map((dish) => (
-          <li key={dish.id}>
-            <img src={dish.img} alt={dish.name} width="50" /> {dish.name} - ${dish.price} ({dish.size})
-          </li>
-        ))}
+        {dishes.length > 0 ? (
+          dishes.map((dish) => (
+            <li key={dish.id}>
+              <img src={dish.img} alt={dish.name} width="50" /> {dish.name} - ${dish.price} ({dish.size})
+            </li>
+          ))
+        ) : (
+          <p>No dishes available</p>
+        )}
       </ul>
 
       {/* Order Status */}
       <h2>Order Status</h2>
       <ul>
-        {orders.map((order) => (
-          <li key={order.id}>
-            Order #{order.id} - {order.status}
-          </li>
-        ))}
+        {orders.length > 0 ? (
+          orders.map((order) => (
+            <li key={order.id}>
+              Order #{order.id} - {order.status}
+            </li>
+          ))
+        ) : (
+          <p>No orders yet</p>
+        )}
       </ul>
     </div>
   );

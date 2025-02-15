@@ -15,7 +15,7 @@ app.use(express.json());
 // Connect to the database
 
 // OR if you want to restrict access to your frontend only:
-app.use(cors({ origin: "http://localhost:5173" || "http://localhost:5174"  })); 
+app.use(cors({ origin: ["http://localhost:5173", "http://localhost:5174"] }));
 
  
 db();

@@ -1,24 +1,25 @@
 import express from "express";
-const addrecipe = express.Router()
+import Dish from "../models/Dish.js"; // Import the Dish model
 
-addrecipe.post('/addrecipe', (req, res) => {
-    const { img, name, size, price } = req.body
+const addrecipe = express.Router();
 
-    
-    if (price) {
-        res.send({
-            message: "Received"
-        })
+addrecipe.post("/addrecipe", async (req, res) => {
+  try {
+    const { img, name, size, price } = req.body;
 
-    }
-    else {
-        res.send({
-            status : 400,
-            message: "price is reqiured"
-
-        })
+    if (!price || !name) {
+      return res.status(400).json({ message: "Price is required" });
     }
 
-})
+    // Create a new dish and save it to MongoDB
+    const newDish = new Dish({ img, name, size, price });
+    await newDish.save();
 
-export default addrecipe
+    res.status(201).json({ message: "Dish added successfully", dish: newDish });
+  } catch (error) {
+    console.error("Error adding dish:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+export default addrecipe;
